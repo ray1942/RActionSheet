@@ -66,7 +66,7 @@ class RActionSheet: UIView {
         self.delegate = delegate
         
         self.backgroundColor = UIColor.black
-        UIApplication.shared.windows.first?.addSubview(self)
+       ((UIApplication.shared.delegate?.window)!)?.addSubview(self)
         
         self.alpha = 0.0
         
@@ -78,7 +78,7 @@ class RActionSheet: UIView {
         let sheetView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: RScreenW, height: 0))
         sheetView.backgroundColor = BGCOLOR
         sheetView.alpha = 0.9
-        UIApplication.shared.windows.first?.addSubview(sheetView)
+       ((UIApplication.shared.delegate?.window)!)?.addSubview(sheetView)
         self.sheetView = sheetView
         sheetView.isHidden = true
         
